@@ -56,6 +56,8 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.bundles.ui)
+    implementation(libs.retrofit)
+    implementation(libs.koin)
 
     implementation(project(":barto"))
 
