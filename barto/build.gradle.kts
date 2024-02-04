@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "br.com.gabrielorander.home"
+    namespace = "br.com.gabrielorander.barto"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "br.com.gabrielorander.home"
+        applicationId = "br.com.gabrielorander.barto"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -52,15 +52,19 @@ android {
 
 dependencies {
 
-    implementation(libs.bundles.androidx)
+    implementation(libs.core.ktx)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
-    implementation(libs.bundles.ui)
-
-    implementation(project(":barto"))
-
-    testImplementation(libs.bundles.unit.test)
-    androidTestImplementation(libs.bundles.android.test)
+    implementation(libs.ui.graphics)
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.material3)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
-    debugImplementation(libs.bundles.debug)
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.test.manifest)
 }
