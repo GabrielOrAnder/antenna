@@ -23,6 +23,7 @@ android {
 
     buildTypes {
         release {
+            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -39,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -55,7 +57,10 @@ dependencies {
     implementation(libs.bundles.androidx)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.ui)
+    implementation(libs.bundles.retrofit)
+    implementation(libs.bundles.koin)
     implementation(project(":barto"))
+    implementation(project(":home"))
 
     testImplementation(libs.bundles.unit.test)
     androidTestImplementation(libs.bundles.android.test)
