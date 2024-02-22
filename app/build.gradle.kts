@@ -30,6 +30,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -43,7 +47,7 @@ android {
         buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
@@ -60,7 +64,7 @@ dependencies {
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.koin)
     implementation(project(":barto"))
-    implementation(project(":home"))
+    //implementation(project(":home"))
 
     testImplementation(libs.bundles.unit.test)
     androidTestImplementation(libs.bundles.android.test)
