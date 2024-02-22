@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Antenna"
 include(":app")
 include(":barto")
+ 

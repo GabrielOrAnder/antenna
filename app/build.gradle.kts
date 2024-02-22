@@ -16,21 +16,17 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
         release {
-            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
         }
-
         debug {
             buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
         }
@@ -57,13 +53,12 @@ android {
 }
 
 dependencies {
-
     implementation(libs.bundles.androidx)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.ui)
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.koin)
-    implementation(project(":barto"))
+    //implementation(project(":barto"))
     //implementation(project(":home"))
 
     testImplementation(libs.bundles.unit.test)
