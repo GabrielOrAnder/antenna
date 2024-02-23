@@ -1,21 +1,18 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
 }
 
 android {
-    namespace = "br.com.gabrielorander.antenna"
+    namespace = "br.com.gabrielorander.network"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "br.com.gabrielorander.antenna"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -39,31 +36,15 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        compose = true
         buildConfig = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
 }
 
 dependencies {
-    implementation(libs.bundles.androidx)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.ui)
+    implementation(libs.core.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.koin)
-    //implementation(project(":barto"))
-    implementation(project(":network"))
-
-    testImplementation(libs.bundles.unit.test)
-    androidTestImplementation(libs.bundles.android.test)
-    androidTestImplementation(platform(libs.compose.bom))
-
-    debugImplementation(libs.bundles.debug)
 }

@@ -1,4 +1,4 @@
-package br.com.gabrielorander.antenna.data.remote
+package br.com.gabrielorander.network.data
 
 import retrofit2.Response
 import retrofit2.http.GET
