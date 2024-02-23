@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "br.com.gabrielorander.antenna"
+    namespace = "br.com.gabrielorander.barto.sample"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "br.com.gabrielorander.antenna"
+        applicationId = "br.com.gabrielorander.barto.sample"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -25,10 +25,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
-        }
-        debug {
-            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
         }
     }
     compileOptions {
@@ -37,18 +33,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-        buildConfig = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
 }
 
@@ -59,7 +43,6 @@ dependencies {
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.koin)
     implementation(project(":barto:feature"))
-    implementation(project(":network"))
 
     testImplementation(libs.bundles.unit.test)
     androidTestImplementation(libs.bundles.android.test)
