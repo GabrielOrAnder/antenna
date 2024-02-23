@@ -16,5 +16,7 @@ dependencyResolutionManagement {
 rootProject.name = "Antenna"
 include(":app")
 include(":network")
-include(":barto:sample")
 include(":barto:feature")
+include(":barto:sample")
+include(":home:feature")
+include(":home:sample")

@@ -5,20 +5,17 @@ plugins {
 }
 
 android {
-    namespace = "br.com.gabrielorander.antenna"
+    namespace = "br.com.gabrielorander.home.sample"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "br.com.gabrielorander.antenna"
+        applicationId = "br.com.gabrielorander.home.sample"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
@@ -28,10 +25,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
-        }
-        debug {
-            buildConfigField("String", "BASE_URL", "\"https://api.tvmaze.com\"")
         }
     }
     compileOptions {
@@ -43,7 +36,6 @@ android {
     }
     buildFeatures {
         compose = true
-        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.10"
@@ -63,12 +55,9 @@ dependencies {
     implementation(libs.bundles.koin)
     implementation(project(":barto:feature"))
     implementation(project(":home:feature"))
-    implementation(project(":network"))
-    implementation(platform(libs.compose.bom))
 
     testImplementation(libs.bundles.unit.test)
     androidTestImplementation(libs.bundles.android.test)
-    androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(platform(libs.compose.bom))
 
     debugImplementation(libs.bundles.debug)
