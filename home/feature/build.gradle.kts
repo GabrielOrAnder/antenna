@@ -13,6 +13,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -51,9 +54,12 @@ dependencies {
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.koin)
     implementation(project(":barto:feature"))
+    implementation(project(":network"))
+    implementation(platform(libs.compose.bom))
 
     testImplementation(libs.bundles.unit.test)
     androidTestImplementation(libs.bundles.android.test)
+    androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(platform(libs.compose.bom))
 
     debugImplementation(libs.bundles.debug)
