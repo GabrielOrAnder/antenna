@@ -50,9 +50,7 @@ android {
 dependencies {
     implementation(libs.bundles.androidx)
     implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.ui)
-    implementation(libs.bundles.retrofit)
-    implementation(libs.bundles.koin)
+    implementation(libs.bundles.compose)
     implementation(project(":barto:feature"))
 
     testImplementation(libs.bundles.unit.test)

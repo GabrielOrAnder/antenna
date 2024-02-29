@@ -47,7 +47,7 @@ android {
 dependencies {
     implementation(libs.bundles.androidx)
     implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.ui)
+    implementation(libs.bundles.compose)
 
     testImplementation(libs.bundles.unit.test)
     androidTestImplementation(libs.bundles.android.test)
