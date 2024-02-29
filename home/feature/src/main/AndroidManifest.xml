@@ -3,16 +3,11 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <application
-        android:name=".HomeApplication">
+    <application>
         <activity
             android:name=".presentation.HomeScreen"
             android:exported="true"
             android:label="@string/title_activity_home_screen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

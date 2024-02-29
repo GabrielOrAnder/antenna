@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Antenna"
+rootProject.name = "antenna"
 include(":app")
 include(":network")
 include(":barto:feature")

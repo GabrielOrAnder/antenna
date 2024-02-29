@@ -1,4 +1,4 @@
-package br.com.gabrielorander.home.feature
+package br.com.gabrielorander.home.sample
 
 import android.app.Application
 import br.com.gabrielorander.home.feature.di.homeModule
@@ -7,12 +7,12 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-class HomeApplication : Application() {
+class HomeSampleApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin{
             androidLogger()
-            androidContext(this@HomeApplication)
+            androidContext(this@HomeSampleApplication)
             modules(
                 networkModule,
                 homeModule

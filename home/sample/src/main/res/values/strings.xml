@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Home Sample</string>
+    <string name="home_sample_title_activity_screen">Home Sample</string>
 </resources>

@@ -16,6 +16,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -55,9 +58,11 @@ dependencies {
     implementation(libs.bundles.koin)
     implementation(project(":barto:feature"))
     implementation(project(":home:feature"))
+    implementation(project(":network"))
 
     testImplementation(libs.bundles.unit.test)
     androidTestImplementation(libs.bundles.android.test)
+    androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(platform(libs.compose.bom))
 
     debugImplementation(libs.bundles.debug)
