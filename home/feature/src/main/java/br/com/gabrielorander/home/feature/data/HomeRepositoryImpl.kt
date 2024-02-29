@@ -8,6 +8,7 @@ class HomeRepositoryImpl(
     private val api: TVMazeApi
 ): HomeRepository {
     override suspend fun fetchShows(): List<ShowResponse> {
-        return api.getShows().body() ?: emptyList()
+        val response = api.getShows()
+        return response.body() ?: emptyList()
     }
 }
